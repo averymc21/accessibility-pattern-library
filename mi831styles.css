@@ -1,44 +1,48 @@
 /* Custom styles to enhance readability and meet visual contrast */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f7f7f7;
-    color: #1f2937; /* Dark text for contrast */
+   font-family: 'Inter', sans-serif;
+   background-color: #f7f7f7;
+   color: #1f2937; /* Dark text for contrast */
 }
 /* Custom focus indicator for keyboard navigation (WCAG Success Criterion 2.4.7) */
 button:focus, a:focus, .nav-item:focus {
-    outline: 4px solid #FDBA74; /* Amber ring for high visibility */
-    outline-offset: 2px;
+   outline: 4px solid #FDBA74; /* Amber ring for high visibility */
+   outline-offset: 2px;
 }
+
 
 /* Specific styles for the hero sections using the color scheme from the wireframe */
 .hero-section-1 {
-    background-color: #0d9488; /* Teal/Green color */
-    color: white;
-    /* Ensure text contrast is met: #0d9488 vs #ffffff has contrast ratio of 7.45:1 */
+   background-color: #0d9488; /* Teal/Green color */
+   color: white;
+   /* Ensure text contrast is met: #0d9488 vs #ffffff has contrast ratio of 7.45:1 */
 }
 .hero-section-2 {
-    background-color: #2563eb; /* Blue color */
-    color: white;
-    /* Ensure text contrast is met: #2563eb vs #ffffff has contrast ratio of 4.3:1 (passes AA) */
+   background-color: #2563eb; /* Blue color */
+   color: white;
+   /* Ensure text contrast is met: #2563eb vs #ffffff has contrast ratio of 4.3:1 (passes AA) */
 }
 .hero-section-3 {
-    background-color: #b91c1c; /* Red color */
-    color: white;
-    /* Ensure text contrast is met: #b91c1c vs #ffffff has contrast ratio of 4.63:1 (passes AA) */
+   background-color: #b91c1c; /* Red color */
+   color: white;
+   /* Ensure text contrast is met: #b91c1c vs #ffffff has contrast ratio of 4.63:1 (passes AA) */
 }
+
 
 /* Styling for the interactive pattern demo */
 .demo-container {
-    border: 2px solid #e5e7eb;
-    padding: 1rem;
-    border-radius: 0.5rem;
+   border: 2px solid #e5e7eb;
+   padding: 1rem;
+   border-radius: 0.5rem;
 }
+
 
 /* Hide content pages initially, only show the active one */
 .page-content {
-    display: none;
+   display: none;
 }
 .active-page {
-    display: block;
+   display: block;
 }
+
