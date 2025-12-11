@@ -46,3 +46,54 @@ button:focus, a:focus, .nav-item:focus {
    display: block;
 }
 
+/* --- E. High Contrast Mode (WCAG 1.4.3 & 1.4.11) --- */
+
+body.high-contrast-mode {
+    background-color: black !important;
+    color: white !important;
+}
+
+body.high-contrast-mode h1,
+body.high-contrast-mode h2,
+body.high-contrast-mode h3,
+body.high-contrast-mode h4 {
+    color: #ffff00 !important; /* Bright yellow for headings */
+    border-color: #ffff00 !important;
+}
+
+/* Ensure links stand out dramatically */
+body.high-contrast-mode a {
+    color: #00ff00 !important; /* Bright green for links */
+    text-decoration: underline !important;
+    font-weight: bold !important;
+}
+
+/* Ensure all buttons and interactive elements maintain extremely high contrast */
+body.high-contrast-mode button,
+body.high-contrast-mode .nav-item {
+    background-color: white !important;
+    color: black !important;
+    border: 3px solid #ffff00 !important; /* Yellow border */
+}
+
+/* Ensure focus ring remains visible */
+body.high-contrast-mode :focus {
+    outline: 5px solid #00ffff !important; /* Cyan ring */
+    outline-offset: 3px !important;
+}
+
+/* Override the hero section colors to black/white for true contrast */
+body.high-contrast-mode .hero-section-1,
+body.high-contrast-mode .hero-section-2,
+body.high-contrast-mode .hero-section-3 {
+    background-color: black !important;
+    color: white !important;
+    border: 3px solid white;
+}
+
+/* Override the yellow alert box */
+body.high-contrast-mode .bg-yellow-100 {
+    background-color: black !important;
+    color: white !important;
+    border-color: yellow !important;
+}
