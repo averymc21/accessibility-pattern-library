@@ -232,5 +232,55 @@
        // Initialize state
        mediaPauseButton.click(); // Start in paused state
    }
+   // ===================================
+    // E. High-Contrast Toggle Logic
+    // ===================================
+
+    // 1. HTML for the button: We need a button to click. Let's add it to the header.
+    // 2. State management: Check user preference and local storage.
+
+    const body = document.body;
+    const HIGH_CONTRAST_CLASS = 'high-contrast-mode';
+    const TOGGLE_ID = 'contrast-toggle';
+
+    function initializeContrast() {
+        // Check for saved preference
+        const savedPreference = localStorage.getItem(HIGH_CONTRAST_CLASS);
+
+        if (savedPreference === 'true' || 
+            (savedPreference === null && window.matchMedia('(forced-colors: active)').matches)) {
+            // Apply high contrast if saved or if browser forced-colors mode is active
+            body.classList.add(HIGH_CONTRAST_CLASS);
+        }
+        
+        // Setup button listener if the button exists
+        const toggleButton = document.getElementById(TOGGLE_ID);
+        if (toggleButton) {
+            updateToggleButtonState(toggleButton, body.classList.contains(HIGH_CONTRAST_CLASS));
+            
+            toggleButton.addEventListener('click', () => {
+                const isEnabled = body.classList.toggle(HIGH_CONTRAST_CLASS);
+                localStorage.setItem(HIGH_CONTRAST_CLASS, isEnabled);
+                updateToggleButtonState(toggleButton, isEnabled);
+            });
+        }
+    }
+    
+    function updateToggleButtonState(button, isEnabled) {
+        if (isEnabled) {
+            button.textContent = 'Disable High Contrast';
+            button.setAttribute('aria-pressed', 'true');
+            button.classList.add('bg-gray-700', 'text-white');
+            button.classList.remove('bg-gray-100', 'text-gray-900');
+        } else {
+            button.textContent = 'Enable High Contrast';
+            button.setAttribute('aria-pressed', 'false');
+            button.classList.add('bg-gray-100', 'text-gray-900');
+            button.classList.remove('bg-gray-700', 'text-white');
+        }
+    }
+
+    // Call the initialization function after the DOM is loaded
+    initializeContrast();
 })();
 
