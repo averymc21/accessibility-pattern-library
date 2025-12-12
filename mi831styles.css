@@ -29,6 +29,17 @@ button:focus, a:focus, .nav-item:focus {
    /* Ensure text contrast is met: #b91c1c vs #ffffff has contrast ratio of 4.63:1 (passes AA) */
 }
 
+.hero-section-4 {
+    background-color: #4B5563; /* Dark gray for a professional/citation look */
+    color: white;
+}
+
+/* Ensure this new hero section is also overridden in High Contrast Mode */
+body.high-contrast-mode .hero-section-4 {
+    background-color: black !important;
+    color: white !important;
+    border: 3px solid white;
+}
 
 /* Styling for the interactive pattern demo */
 .demo-container {
